@@ -1,0 +1,33 @@
+$font-stack:    Helvetica, sans-serif
+$primary-color: black
+$good-color: green
+$bad-color: red
+body
+  display: flex
+  justify-content: center
+.left-panel
+    margin-right: 20px
+    .contact-bar
+        flex-direction: column
+        input
+            margin: 5px 0px 5px 0px
+    .logo
+        img
+            width:  125px
+            height: 125px
+            padding: 10px
+    .results
+        flex-direction: row
+        .result
+            padding: 5px 0px 5px 0px
+        .result__good
+            color: $good-color
+        .result__bad
+            color: $bad-color
+.right-panel
+    .header
+        height: 200px
+        background-color: lightgreen
+
+.flex
+    display: flex

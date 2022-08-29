@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/timer.css" />
+    <title>Horrest Coin</title>
+    <link rel="icon" href="images/dest/logo.png" />
+
+    <meta property="og:image" content="images/dest/logo.png" />
+
+    <meta
+      property="og:description"
+      content="Horrest Coin. Your best investing option"
+    />
+
+    <meta property="og:title" content="Horrest Coin" />
+  </head>
+  <body>
+    <div class="header__wrapper">
+      <div class="header">
+        <div class="header-item logo">
+          <img src="images/dest/logo.png" />
+          <a href="#main">Horrestcoin.finance</a>
+        </div>
+        <div class="header-item links-holder">
+          <a href="#about">About</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#tokenomics">Tokenomics</a>
+          <a href="Don't_buy_scam_coins/" target="_blank">Charts</a>
+          <a
+            href="Don't_buy_scam_coins/"
+            target="_blank"
+            >Invest</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="main" class="main-body">
+      <div class="banner">
+        <div id="clockdiv" class="timer">
+          <!-- <img style="width: 379px; height: 130px;" src="images/dest/timer-background.png" /> -->
+          <div>
+            <span class="days"></span>
+            <div class="smalltext">Days</div>
+          </div>
+          <div>
+            <span class="hours"></span>
+            <div class="smalltext">Hours</div>
+          </div>
+          <div>
+            <span class="minutes"></span>
+            <div class="smalltext">Minutes</div>
+          </div>
+          <div>
+            <span class="seconds"></span>
+            <div class="smalltext">Seconds</div>
+          </div>
+        </div>
+        <img src="images/dest/logo.png" />
+      </div>
+
+      <div id="about" class="block about">
+        <div class="block__title">About</div>
+        <div class="block__value">
+          <div>
+            Kids, don't fall for it. For real. Ragpull is real
+          </div>
+          <div>
+            Initial token launch is need to ensure our vision of project could
+            be dilivered. Every token bought on BSC network will be avaible for
+            bridging on mainnet when it launches. And some other bullcrap.
+          </div>
+          <div>
+            Funds for development will be fundraised using PCS LP ICO style, no
+            dev token will be allocated for selling. Yeah, this is legit. For real. No jokes. 
+            Come on give us your money (please don't)
+          </div>
+        </div>
+      </div>
+
+      <div id="roadmap" class="block roadmap">
+        <div class="block__title">Roadmap</div>
+        <div class="block__value">
+          Q2
+          <ul>
+            <li>Fully written whitepaper/medium articles</li>
+            <li>Updated website</li>
+            <li>Pancakeswap token initial launch</li>
+            <li>Media promotion</li>
+            <li>How many buggaties do you have?</li>
+          </ul>
+          Q3
+          <ul>
+            <li>Testnet release</li>
+            <li>Launch of Bridge APP</li>
+            <li>Release of DAOprotocol using Horrest tokens</li>
+            <li>Buying a mansion for me</li>
+          </ul>
+          Q4
+          <ul>
+            <li>Mainnet Release</li>
+            <li>Full release of crosschain tx/coin Bridge</li>
+            <li>Third ragpull</li>
+          </ul>
+        </div>
+      </div>
+      <div style="position: relative" id="tokenomics" class="block tokenomics">
+        <img
+          class="block__bordered-image"
+          src="images/dest/tokenomics.png"
+          width="600px"
+        />
+        <img style="position: absolute" src="images/dest/tokenomics2.png" />
+      </div>
+    </div>
+    <div id="contacts" class="footer">
+      <a
+        class="fab fa-telegram"
+        href="Don't_buy_scam_coins/"
+        target="_blank"
+      ></a>
+
+      <a
+        class="fab fa-discord"
+        href="Don't_buy_scam_coins/"
+        target="_blank"
+      ></a>
+
+      <a
+        class="fab fa-twitter"
+        href="Don't_buy_scam_coins/"
+        target="_blank"
+      ></a>
+    </div>
+  </body>
+</html>
+<script>
+  function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - new Date();
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      total: t,
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds,
+    };
+  }
+
+  function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector(".days");
+    var hoursSpan = clock.querySelector(".hours");
+    var minutesSpan = clock.querySelector(".minutes");
+    var secondsSpan = clock.querySelector(".seconds");
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+
+      daysSpan.innerHTML = t.days;
+      hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+      minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }
+
+  var deadline = new Date();
+  deadline.setDate(new Date().getDate() + 1);
+  initializeClock("clockdiv", deadline);
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+</script>
+<style>
+  #clockdiv span {
+    background: #0d0d2b !important;
+  }
+  #clockdiv div {
+    background: #f5edcc !important;
+  }
+
+  .smalltext {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  body {
+    background-color: #f5edcc;
+  }
+  .wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+  }
+  a:visited {
+    color: #ffffff;
+  }
+  a:hover {
+    color: #ffffff;
+  }
+  a:active {
+    color: #ffffff;
+  }
+
+  .links-holder > a {
+    padding: 0 10px 0px 10px;
+  }
+
+  .links-holder > a:last-child {
+    background-color: #716b47;
+    border-radius: 32px;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 32px;
+  }
+  .header__wrapper {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #0d0d2b;
+  }
+
+  .logo {
+    align-items: center;
+    display: flex;
+    width: 185px;
+    justify-content: space-between;
+  }
+  .logo > img {
+    width: 50px;
+    height: 50px;
+    padding-right: 20px;
+  }
+
+  .header-item {
+    margin: 10px 15px 10px 15px;
+  }
+
+  .header-item > a {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+  .header-item:first-child {
+    padding-left: 60px;
+  }
+  .header-item:last-child {
+    padding-right: 100px;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+    width: 100%;
+  }
+
+  .banner > img {
+    padding: 25px;
+    width: 281px;
+    height: 281px;
+    margin-left: 75px;
+  }
+
+  .banner > .timer {
+    padding: 25px;
+    background-color: #0d0d2b;
+    border-radius: 25px;
+    box-shadow: 10px 5px 5px black;
+  }
+  .main-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .main-body > .block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+  }
+  .block > .block__title {
+    padding: 20px;
+    font-family: "Helvetica", Sans-serif;
+    letter-spacing: 10px;
+    font-size: 28px;
+  }
+
+  .main-body > .tokenomics {
+    padding-top: 200px;
+    padding-bottom: 300px;
+  }
+
+  .tokenomics > .block__bordered-image {
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px;
+  }
+
+  .main-body > .roadmap {
+    padding-top: 20px;
+    height: 700px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 20px;
+  }
+
+  .roadmap > .block__value {
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px black;
+  }
+  .block__value {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .roadmap > li {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 20px;
+    padding: 10px 0px 10px 0px;
+    list-style-type: none;
+  }
+  .about {
+    padding-top: 100px;
+  }
+  .about .block__value {
+    font-size: 25px;
+    line-height: initial;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px black;
+  }
+
+  .about .block__title {
+    font-size: 40px;
+  }
+  .block.about {
+    width: 650px;
+  }
+  .footer {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    height: 30px !important;
+    justify-content: flex-start;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+
+  @media screen and (max-width: 992px) {
+    .footer {
+      right: auto;
+      left: 0;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .footer > a {
+    color: #0d0d2b;
+  }
+  .footer > .fab {
+    padding: 10px;
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .footer > .fab:hover {
+    font-weight: 500;
+    font-size: 60px;
+  }
+
+  .smalltext {
+    color: black;
+  }
+</style>

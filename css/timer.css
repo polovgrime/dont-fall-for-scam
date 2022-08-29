@@ -1,0 +1,30 @@
+#clockdiv {
+  font-family: sans-serif;
+  color: rgb(255, 253, 253);
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+  background-image: url('../images/dest/timer-background.png');
+  background-repeat: no-repeat;
+  background-size: 379px 140px;
+}
+
+#clockdiv > div {
+  padding: 10px;
+  border-radius: 3px;
+  background: #d8dcdb;
+  display: inline-block;
+}
+
+#clockdiv div > span {
+  padding: 15px;
+  border-radius: 3px;
+  background: #434847;
+  display: inline-block;
+}
+
+.smalltext {
+  padding-top: 5px;
+  font-size: 16px;
+}
